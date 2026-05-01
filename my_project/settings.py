@@ -1,5 +1,11 @@
+import os
+from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
+
+
+
+
 
 """
 Django settings for my_project project.
@@ -97,7 +103,7 @@ DATABASES = {
 
   'ENGINE': 'django.db.backends.mysql',
 
-  'NAME': 'skill2achieve',
+  'NAME': BASE_DIR / 'db.sqlite3',
 
   'USER': 'root',
 
