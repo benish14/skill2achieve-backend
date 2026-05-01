@@ -1,4 +1,6 @@
-
+import os
+import pymysql
+pymysql.install_as_MySQLdb()
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -98,6 +100,8 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 
 
 
+import os
+
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.mysql',
@@ -105,7 +109,7 @@ DATABASES = {
     'USER': os.getenv("DB_USER"),
     'PASSWORD': os.getenv("DB_PASSWORD"),
     'HOST': os.getenv("DB_HOST"),
-    'PORT': '3306',
+    'PORT': os.getenv("DB_PORT", "3306"),
   }
 }
 
